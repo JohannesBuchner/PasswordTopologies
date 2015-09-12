@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Most common password topologies</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="most-common-password-topologies">
+<h1 class="title">Most common password topologies</h1>
+
+<div class="figure">
+<img alt="Most common password topologies" src="patterns.png" style="width: 813.12px; height: 749.1px;" />
+<p class="caption">The more common topologies found, the less secure the site is to topology
+attacks. Secure sites have users with diverse passwords.</p>
+</div>
+<p>Dataset from <a class="reference external" href="http://www.adeptus-mechanicus.com/codex/hashpass/hashpass.php">http://www.adeptus-mechanicus.com/codex/hashpass/hashpass.php</a></p>
+<div class="section" id="abc">
+<h1>abc</h1>
+<p>46692 entries</p>
+<ul class="simple">
+<li>llllll (6278)</li>
+<li>llllllll (4295)</li>
+<li>lllllll (4006)</li>
+<li>lllllllll (2422)</li>
+</ul>
+</div>
+<div class="section" id="aha">
+<h1>aha</h1>
+<p>171208 entries</p>
+<ul class="simple">
+<li>llllll (17230)</li>
+<li>llllllll (15129)</li>
+<li>dddddd (12470)</li>
+<li>lllllll (11729)</li>
+</ul>
+</div>
+<div class="section" id="bfield">
+<h1>bfield</h1>
+<p>541448 entries</p>
+<ul class="simple">
+<li>llllll (51601)</li>
+<li>llllllll (40528)</li>
+<li>lllllll (33740)</li>
+<li>lllllldd (23747)</li>
+<li>dddddd (23047)</li>
+<li>lllllllll (20384)</li>
+<li>llllllllll (13448)</li>
+<li>dddddddd (13258)</li>
+<li>llllllld (12221)</li>
+</ul>
+</div>
+<div class="section" id="bkav-1">
+<h1>bkav-1</h1>
+<p>21232 entries</p>
+<ul class="simple">
+<li>dddddd (7521)</li>
+<li>dddddddd (2706)</li>
+<li>llllllll (2111)</li>
+<li>llllll (1352)</li>
+</ul>
+</div>
+<div class="section" id="bkav-2">
+<h1>bkav-2</h1>
+<p>8901 entries</p>
+<ul class="simple">
+<li>dddddd (3269)</li>
+<li>dddddddd (1074)</li>
+<li>llllllll (867)</li>
+<li>llllll (662)</li>
+</ul>
+</div>
+<div class="section" id="blackstar">
+<h1>blackstar</h1>
+<p>8685 entries</p>
+<ul class="simple">
+<li>dddddd (1384)</li>
+<li>dddddddd (859)</li>
+<li>llllll (675)</li>
+<li>ddddddd (640)</li>
+</ul>
+</div>
+<div class="section" id="casio">
+<h1>casio</h1>
+<p>18449 entries</p>
+<ul class="simple">
+<li>dddddd (5672)</li>
+<li>dddddddd (2687)</li>
+<li>ddddddd (1888)</li>
+<li>llllllll (1037)</li>
+</ul>
+</div>
+<div class="section" id="dhool">
+<h1>dhool</h1>
+<p>14371 entries</p>
+<ul class="simple">
+<li>llllllll (665)</li>
+<li>llllll (524)</li>
+<li>dddddd (392)</li>
+<li>lllllll (377)</li>
+<li>dddddddddd (368)</li>
+<li>ddddddddd (336)</li>
+<li>dddddddd (265)</li>
+<li>UUllUUUlUl (252)</li>
+<li>lllllllll (159)</li>
+<li>lllll (121)</li>
+<li>llllllllll (103)</li>
+<li>llllddd (84)</li>
+<li>lllllldddd (81)</li>
+<li>ddddddd (77)</li>
+<li>lllldddd (75)</li>
+<li>lllllldd (73)</li>
+<li>lllllllllll (68)</li>
+<li>lllllddd (61)</li>
+<li>lllllllld (58)</li>
+<li>llllllddd (54)</li>
+<li>lllllllddd (52)</li>
+</ul>
+</div>
+<div class="section" id="dsl">
+<h1>dsl</h1>
+<p>5641 entries</p>
+<ul class="simple">
+<li>llllllllllll (516)</li>
+<li>lllllllllllll (492)</li>
+<li>llllllllllllll (478)</li>
+<li>lllllllllllllll (383)</li>
+</ul>
+</div>
+<div class="section" id="eharmony">
+<h1>eharmony</h1>
+<p>1485784 entries</p>
+<ul class="simple">
+<li>UUUUUUUU (122153)</li>
+<li>UUUUUU (101423)</li>
+<li>UUUUUUU (88707)</li>
+<li>UUUUUUUUU (66863)</li>
+<li>UUUUUUUUUU (62324)</li>
+<li>UUUdddd (52709)</li>
+<li>UUUUUUUUUUU (39967)</li>
+<li>UUUUdd (38789)</li>
+<li>UUUUUdd (32970)</li>
+<li>UUdddd (30246)</li>
+<li>UUUUdddd (28754)</li>
+<li>UUUUUUUUUUUU (27173)</li>
+<li>UUUUUUdd (27160)</li>
+<li>UUUUUUd (26213)</li>
+<li>UUUUU (25610)</li>
+<li>UUUUUUUUdd (25310)</li>
+<li>UUUUUUUdd (25149)</li>
+<li>UUUUUdddd (23539)</li>
+<li>UUUUUUUUd (23516)</li>
+<li>UUUddd (22572)</li>
+<li>UUUUUUUUUd (21794)</li>
+<li>UUUUddd (21172)</li>
+<li>UUUUUUdddd (17246)</li>
+<li>UUUUUd (16584)</li>
+<li>UUUUUUUd (16056)</li>
+<li>UUUUUUUUUUUUU (15735)</li>
+<li>dddddddddd (12444)</li>
+<li>UUUUUUUUUdd (12184)</li>
+<li>UUUUUUUdddd (11814)</li>
+<li>UUUUUUUUUUUUUU (11792)</li>
+</ul>
+</div>
+<div class="section" id="ffgbeach">
+<h1>ffgbeach</h1>
+<p>479148 entries</p>
+<ul class="simple">
+<li>llllll (55298)</li>
+<li>lllllll (36638)</li>
+<li>llllllll (33333)</li>
+<li>lllllllll (20717)</li>
+<li>lllll (20350)</li>
+<li>dddddd (18391)</li>
+<li>lllllldd (15283)</li>
+<li>llllllllll (14652)</li>
+<li>llllldd (13527)</li>
+<li>llll (13307)</li>
+<li>lllldd (12151)</li>
+</ul>
+</div>
+<div class="section" id="gamigo">
+<h1>gamigo</h1>
+<p>6925979 entries</p>
+<ul class="simple">
+<li>lllUUUddd (191346)</li>
+<li>llllllll (160810)</li>
+<li>lllllldd (146976)</li>
+<li>llllll (126637)</li>
+<li>lllllll (115231)</li>
+<li>lllllllll (114693)</li>
+<li>llllllllll (107193)</li>
+<li>dddddddd (92133)</li>
+<li>llllllldd (84708)</li>
+<li>ddllllllll (79531)</li>
+<li>llldldllll (79075)</li>
+<li>llllddllll (79006)</li>
+<li>lllldllldl (78998)</li>
+<li>lllldldlll (78849)</li>
+<li>lldllllldl (78829)</li>
+<li>ldllldllll (78803)</li>
+<li>ldllllldll (78785)</li>
+<li>lllldlldll (78650)</li>
+<li>llldlldlll (78561)</li>
+<li>ldldllllll (78502)</li>
+<li>ldlllldlll (78425)</li>
+<li>ldlllllldl (78379)</li>
+<li>llldlllldl (78372)</li>
+<li>lllllddlll (78357)</li>
+<li>llldllldll (78357)</li>
+<li>llllldldll (78350)</li>
+<li>lldllldlll (78245)</li>
+<li>lllddlllll (78204)</li>
+<li>lllllldldl (78132)</li>
+<li>llllldlldl (78045)</li>
+<li>dlllllldll (78030)</li>
+<li>ldlldlllll (77986)</li>
+<li>llllllddll (77982)</li>
+<li>lldlldllll (77937)</li>
+<li>lllllllddl (77925)</li>
+<li>lldlllldll (77919)</li>
+<li>dllllllldl (77706)</li>
+<li>llddllllll (77679)</li>
+<li>lldldlllll (77618)</li>
+<li>dlllldllll (77432)</li>
+<li>lddlllllll (77249)</li>
+<li>dllllldlll (77066)</li>
+<li>dllldlllll (76979)</li>
+<li>dldlllllll (76767)</li>
+<li>dlldllllll (76469)</li>
+<li>dddddd (75453)</li>
+<li>lllldddd (74278)</li>
+<li>llllldd (69365)</li>
+<li>lllllllldd (68984)</li>
+<li>llllldddd (65774)</li>
+<li>lllllldddd (63482)</li>
+<li>lllllddd (57690)</li>
+<li>lllllllllll (57456)</li>
+<li>llllllddd (54908)</li>
+<li>llllllllllll (48446)</li>
+<li>lllldd (47544)</li>
+<li>llllllld (45253)</li>
+<li>ddddddd (41220)</li>
+<li>lllllllld (40421)</li>
+<li>lllllllddd (34873)</li>
+<li>llllllllldd (34456)</li>
+<li>llllllldddd (31077)</li>
+<li>llllllllld (29198)</li>
+<li>ddddddddd (28642)</li>
+<li>dddddddddd (28238)</li>
+<li>lllllld (27483)</li>
+<li>lllll (26162)</li>
+<li>llllddd (24633)</li>
+<li>llllld (23073)</li>
+<li>lllllllllldd (22429)</li>
+<li>Ullllldd (22283)</li>
+<li>lllllllldddd (22055)</li>
+<li>llllllllddd (22044)</li>
+<li>lllllllllllll (19914)</li>
+<li>llldddd (19530)</li>
+<li>lllddd (15494)</li>
+<li>lllllllllld (15258)</li>
+<li>lllllllllddd (14167)</li>
+<li>lldddddd (13783)</li>
+<li>llllllllllllll (13410)</li>
+<li>Ulllllldd (13137)</li>
+<li>ddddddddddd (12670)</li>
+<li>Ulllllll (12270)</li>
+<li>lllldddddd (11819)</li>
+<li>lldddd (11747)</li>
+<li>Ulllldddd (11166)</li>
+<li>Ulllll (10880)</li>
+<li>lllllddddd (10771)</li>
+<li>llldddddd (10642)</li>
+<li>Ullllllldd (10515)</li>
+<li>Ullllll (10262)</li>
+<li>llllddddd (10183)</li>
+<li>llllllllldddd (10160)</li>
+</ul>
+</div>
+<div class="section" id="gaming">
+<h1>gaming</h1>
+<p>45009 entries</p>
+<ul class="simple">
+<li>llllll (5296)</li>
+<li>lllllll (3536)</li>
+<li>llllllll (3401)</li>
+<li>dddddd (2490)</li>
+</ul>
+</div>
+<div class="section" id="gawker">
+<h1>gawker</h1>
+<p>1086905 entries</p>
+<ul class="simple">
+<li>llllllll (255158)</li>
+<li>llllll (100046)</li>
+<li>lllllll (70693)</li>
+<li>lllllldd (59300)</li>
+<li>llllllld (48889)</li>
+<li>lllllddd (30405)</li>
+<li>dddddd (23184)</li>
+<li>lllll (21715)</li>
+<li>lllldddd (21573)</li>
+<li>dddddddd (19020)</li>
+<li>llllldd (17119)</li>
+<li>lllllld (14489)</li>
+<li>lllldd (13870)</li>
+<li>llllld (13659)</li>
+<li>llll (10695)</li>
+</ul>
+</div>
+<div class="section" id="hellfire">
+<h1>hellfire</h1>
+<p>25332 entries</p>
+<ul class="simple">
+<li>dddsdddsddddlllllslllllllslll (3756)</li>
+<li>d (676)</li>
+<li>llllll (624)</li>
+<li>llllllll (615)</li>
+<li>lllllll (561)</li>
+<li>lllllldd (509)</li>
+<li>dddddd (379)</li>
+</ul>
+</div>
+<div class="section" id="insidepro2012">
+<h1>insidepro2012</h1>
+<p>29538119 entries</p>
+<ul class="simple">
+<li>Ullllldd (646145)</li>
+<li>llllllddd (570362)</li>
+<li>lllllllll (566163)</li>
+<li>llllllll (557424)</li>
+<li>llllllllll (490057)</li>
+<li>Ulllllldd (445968)</li>
+<li>lllllllddd (433298)</li>
+<li>Ullllllld (420464)</li>
+<li>Ullllllldd (412095)</li>
+<li>lllllddd (363345)</li>
+<li>lllllldd (347947)</li>
+<li>lllllllllll (347910)</li>
+<li>Ulllllld (324408)</li>
+<li>llllllllddd (323180)</li>
+<li>Ulllllllld (320886)</li>
+<li>Ullldddd (320113)</li>
+<li>Ullllldddd (318657)</li>
+<li>Ulllldddd (318062)</li>
+<li>lllllldddd (313687)</li>
+<li>Ulllllddd (305491)</li>
+<li>Ullllddd (297610)</li>
+<li>llllllllllll (268243)</li>
+<li>lllllll (267169)</li>
+<li>llllllldd (267064)</li>
+<li>Ulllllllldd (257774)</li>
+<li>Ullllllllld (246941)</li>
+<li>llllldddd (229569)</li>
+<li>llllllldddd (224819)</li>
+<li>lllllllldd (218878)</li>
+<li>Ullllllddd (210881)</li>
+<li>Ulllllldddd (196284)</li>
+<li>lllllllllddd (190492)</li>
+<li>lllllllldddd (176332)</li>
+<li>lllldddd (169439)</li>
+<li>Ulllllllddd (166742)</li>
+<li>Ullllllllldd (165715)</li>
+<li>Ulllllllllld (160468)</li>
+<li>llllllllldd (157950)</li>
+<li>ddddUUUU (157733)</li>
+<li>lllllllllld (152190)</li>
+<li>Ullllllldddd (140148)</li>
+<li>llllldd (139330)</li>
+<li>lllllllld (137445)</li>
+<li>ddddUUUUU (135730)</li>
+<li>llllllllld (132464)</li>
+<li>UUUUUUUUUd (132354)</li>
+<li>llllllld (128034)</li>
+<li>UUUUUUUUUUd (127945)</li>
+<li>Uldddddddd (126564)</li>
+<li>llllddd (125652)</li>
+<li>lllllllllldd (125285)</li>
+<li>Uldddddd (117601)</li>
+<li>ddddlllll (114463)</li>
+<li>llllllllllld (111508)</li>
+<li>ddddllll (111464)</li>
+<li>lllllllllllll (110037)</li>
+<li>UUUUUUUUUU (105196)</li>
+<li>UUUUUUUUd (104854)</li>
+<li>Ullllllllddd (104711)</li>
+<li>ddddddddUl (104382)</li>
+<li>dddUUUU (103466)</li>
+<li>UUUUUUUUU (103289)</li>
+<li>Ullllllllllld (99667)</li>
+<li>dddUUUUU (98943)</li>
+<li>llllllllllddd (95514)</li>
+<li>UUUUUUUU (95508)</li>
+<li>UUUUUUUUUUUd (92826)</li>
+<li>UUUUUdddd (90085)</li>
+<li>ddddUUUUUU (87895)</li>
+<li>llllllllldddd (85675)</li>
+<li>Ullldddddd (83570)</li>
+<li>UUUUUUUUUUU (82731)</li>
+<li>Ulllllllllldd (82517)</li>
+<li>Ulldddddd (82428)</li>
+<li>UUUUUUUUUUUU (77594)</li>
+<li>ddddllllll (76617)</li>
+<li>UUUUdddd (75058)</li>
+<li>Ulllldddddd (74481)</li>
+<li>Ulllllllldddd (72780)</li>
+<li>ddsddsdddd (71256)</li>
+<li>UUUUUUUUUUUUd (70081)</li>
+<li>Ulllllllll (69016)</li>
+<li>Ullllddddd (67723)</li>
+<li>dddUUUUUU (65956)</li>
+<li>ddddddUl (65085)</li>
+<li>lllll (63595)</li>
+<li>llllllllllldd (63509)</li>
+<li>UUUUUUdddd (63455)</li>
+<li>Ullllldddddd (63133)</li>
+<li>Ullllllll (62168)</li>
+<li>dllllllllld (62118)</li>
+<li>lllllld (62026)</li>
+<li>llllllllllllll (60590)</li>
+<li>UUUUUUUd (60361)</li>
+<li>Ulllllllllddd (60354)</li>
+<li>Ulllllddddd (60139)</li>
+<li>Ulllddddd (58478)</li>
+<li>lllllllllllld (58450)</li>
+<li>llllll (58341)</li>
+<li>llll (56692)</li>
+<li>Ulllllllllll (54852)</li>
+<li>Ullddddd (54099)</li>
+<li>Ullllllllll (53558)</li>
+<li>UUUUUUU (50529)</li>
+<li>UUUUUUUUUs (50425)</li>
+<li>Ullllllllllldd (49073)</li>
+<li>Ulllllllllllld (48294)</li>
+<li>dddlllll (48210)</li>
+<li>lllllllllldddd (47835)</li>
+<li>UUUUUddd (47800)</li>
+<li>dlllllllld (46429)</li>
+<li>dlllllllllld (45437)</li>
+<li>ddd (45410)</li>
+<li>Ulllllll (45308)</li>
+<li>lllllllllllddd (45091)</li>
+<li>UUUUUUUUUUUUUd (44655)</li>
+<li>UUUUUUUUUUs (44195)</li>
+<li>ddddUUUUUUU (43866)</li>
+<li>Ullllllllldddd (42983)</li>
+<li>lllllllllls (42887)</li>
+<li>UUUUUUUUs (41629)</li>
+<li>Ulddddddd (41395)</li>
+<li>ddddddddlU (39250)</li>
+<li>UUUUUUddd (38288)</li>
+<li>ddddlllllll (37477)</li>
+<li>dddllll (37107)</li>
+<li>llllllllllllld (36772)</li>
+<li>dddllllll (36591)</li>
+<li>llllllsdd (36535)</li>
+<li>UUUUUUUUUUUUU (36042)</li>
+<li>Ullllllddddd (35374)</li>
+<li>dllllllllllld (34669)</li>
+<li>lllllllllllldd (34523)</li>
+<li>lllllllllllllll (34305)</li>
+<li>llldddddd (34256)</li>
+<li>llllllllls (33987)</li>
+<li>UUUUUUUdddd (33532)</li>
+<li>UUUUUUd (33265)</li>
+<li>Uddddddddl (33055)</li>
+<li>Ulllllldddddd (32938)</li>
+<li>lllllsdd (32483)</li>
+<li>dddUUUUUUU (31895)</li>
+<li>Ullllllllllddd (31863)</li>
+<li>lllllllllU (31504)</li>
+<li>d (31423)</li>
+<li>dddddddUl (30796)</li>
+<li>Ulldddddddd (30643)</li>
+<li>UUUUUUUUUUUs (30354)</li>
+<li>UUUUddd (29519)</li>
+<li>llllllllllls (29489)</li>
+<li>lllllllls (29143)</li>
+<li>lll (29120)</li>
+<li>ddddddlU (29071)</li>
+<li>lllddlll (28935)</li>
+<li>UUUUUUUUUUUUUUd (28727)</li>
+<li>dd (28456)</li>
+<li>llllllllU (28427)</li>
+<li>UUUUUUUs (27879)</li>
+<li>Ullldddddddd (27801)</li>
+<li>llllllllllldddd (27455)</li>
+<li>Ullllllllllllld (27436)</li>
+<li>Ullllll (26636)</li>
+<li>llldddd (26608)</li>
+<li>dUllllll (26258)</li>
+<li>lllldddddd (25439)</li>
+<li>ddddddlll (25108)</li>
+<li>dUlllllll (24772)</li>
+<li>lllllllU (23608)</li>
+<li>lllllllsdd (23395)</li>
+<li>lllllllllllllld (23256)</li>
+<li>Ullllllllllll (23101)</li>
+<li>Ulllllllllllldd (22950)</li>
+<li>UUUUUUUUUUUUs (22793)</li>
+<li>llllllsd (22477)</li>
+<li>llllllllllU (22268)</li>
+<li>Ullllllllls (22258)</li>
+<li>Ulllllllllldddd (22253)</li>
+<li>lllllldds (22178)</li>
+<li>ddddUlll (21829)</li>
+<li>Ulllldddddddd (21328)</li>
+<li>Ulllllllddddd (21202)</li>
+<li>UUUUUUUUUUUUUU (21047)</li>
+<li>lllllllllllls (20548)</li>
+<li>dllllllld (20229)</li>
+<li>llllllllllllddd (20214)</li>
+<li>llllllls (19811)</li>
+<li>Uddddddl (19587)</li>
+<li>llllldddddd (19446)</li>
+<li>Udddddddl (19422)</li>
+<li>llllllllllllldd (19377)</li>
+<li>Ulllllllllllddd (19125)</li>
+<li>dddddddddUl (19061)</li>
+<li>Ullllllldddddd (18891)</li>
+<li>dddlllllll (18757)</li>
+<li>llllddddd (18558)</li>
+<li>lllllldddddd (18317)</li>
+<li>UUUUUUUddd (18275)</li>
+<li>dddd (18271)</li>
+<li>ddddddUlll (18249)</li>
+<li>ddUlllll (17998)</li>
+<li>UUUUUUs (17959)</li>
+<li>Ullllldddddddd (17838)</li>
+<li>llllsdddd (17724)</li>
+<li>lllllllsd (17716)</li>
+<li>lldddddd (17707)</li>
+<li>llllllllds (17648)</li>
+<li>lllllllldU (17624)</li>
+<li>lllllsddd (17568)</li>
+<li>Udllllll (17567)</li>
+<li>ddddUUUUUUUU (17543)</li>
+<li>llllsddd (17480)</li>
+<li>ddddddUll (17401)</li>
+<li>lllllddddd (17329)</li>
+<li>Ullddddddd (17304)</li>
+<li>lllllllllllU (17209)</li>
+<li>llllllsddd (17103)</li>
+<li>lllllllUd (16949)</li>
+<li>dUllllllll (16876)</li>
+<li>Ulllddddddd (16810)</li>
+<li>llllllllsd (16789)</li>
+<li>dddddddlU (16427)</li>
+<li>llllllUd (16020)</li>
+<li>llllllds (16018)</li>
+<li>ddddddll (15762)</li>
+<li>llllllllsdd (15564)</li>
+<li>llllllddddd (15526)</li>
+<li>lllllsdddd (15493)</li>
+<li>Ulllllllllls (15286)</li>
+<li>Ulllllllls (15242)</li>
+<li>lllllllds (15203)</li>
+<li>UUUUUUUUUUUUUs (15148)</li>
+<li>ddddUllll (15122)</li>
+<li>Ullldlll (14896)</li>
+<li>ddddllllllll (14704)</li>
+<li>Ullllldl (14571)</li>
+<li>Ullddlll (14493)</li>
+<li>lllldlll (14370)</li>
+<li>llllldds (14222)</li>
+<li>llldllll (14186)</li>
+<li>Ulldllll (14114)</li>
+<li>lllddddd (13894)</li>
+<li>UUUUUUUUdddd (13751)</li>
+<li>llllllU (13663)</li>
+<li>lllllUdd (13660)</li>
+<li>Ullllddddddd (13654)</li>
+<li>Ullldllll (13646)</li>
+<li>llllllllllllls (13353)</li>
+<li>ll (13315)</li>
+<li>llllllsdddd (13195)</li>
+<li>ddddddddddUl (13015)</li>
+<li>lllsdddd (12963)</li>
+<li>Ullllllls (12944)</li>
+<li>Ulllllllllllll (12928)</li>
+<li>dlllllllllllld (12893)</li>
+<li>llllllldds (12827)</li>
+<li>llllllddU (12801)</li>
+<li>ddddddUllll (12771)</li>
+<li>lllldllll (12764)</li>
+<li>ddddUlllll (12733)</li>
+<li>lUdddddddd (12649)</li>
+<li>llllllllUd (12452)</li>
+<li>Ullllsdd (12427)</li>
+<li>Ulddddddddd (12370)</li>
+<li>UUUdddd (12301)</li>
+<li>Ulllldll (12229)</li>
+<li>dddUUUUUUUU (11932)</li>
+<li>UUlldddd (11892)</li>
+<li>llllllddds (11635)</li>
+<li>dlllllld (11615)</li>
+<li>llllllllllllU (11596)</li>
+<li>dddUllll (11579)</li>
+<li>dlllllll (11554)</li>
+<li>lllllddds (11542)</li>
+<li>Ulllllsdd (11527)</li>
+<li>UUlllldd (11270)</li>
+<li>lUUUUUdd (11254)</li>
+<li>lllllllddddd (11232)</li>
+<li>UUUUUUdd (11227)</li>
+<li>UUUllldd (11093)</li>
+<li>dUlllllllll (11073)</li>
+<li>lsllllllldd (10949)</li>
+<li>ddddddddl (10929)</li>
+<li>Ullllllllddddd (10786)</li>
+<li>ddUllllll (10756)</li>
+<li>UllUlldd (10751)</li>
+<li>ddUllldd (10749)</li>
+<li>dllllllll (10586)</li>
+<li>dddddddl (10484)</li>
+<li>dddUlllll (10471)</li>
+<li>lslllllllldd (10440)</li>
+<li>dlllllllll (10396)</li>
+<li>Ullllllllllls (10393)</li>
+<li>llllllllldU (10313)</li>
+<li>lllllllllds (10186)</li>
+<li>Ulllllddddddd (10029)</li>
+<li>ddddddddUll (10018)</li>
+</ul>
+</div>
+<div class="section" id="linkedin">
+<h1>linkedin</h1>
+<p>5616808 entries</p>
+<ul class="simple">
+<li>llllllll (248471)</li>
+<li>lllllldd (191927)</li>
+<li>lllllllll (180129)</li>
+<li>llllll (177271)</li>
+<li>llllllllll (158641)</li>
+<li>lllllll (150548)</li>
+<li>lllldddd (107506)</li>
+<li>lllllllllll (103513)</li>
+<li>llllllld (87651)</li>
+<li>llllllldd (85963)</li>
+<li>llllldd (76020)</li>
+<li>dddddd (73376)</li>
+<li>llllldddd (71670)</li>
+<li>llllllllllll (67719)</li>
+<li>lllllddd (63869)</li>
+<li>lllllldddd (61216)</li>
+<li>lllllllldd (59844)</li>
+<li>llldddd (55950)</li>
+<li>lllldd (52919)</li>
+<li>lllllllld (50125)</li>
+<li>dddddddd (48037)</li>
+<li>Ullllldd (47115)</li>
+<li>lllllld (43270)</li>
+<li>lldddd (40985)</li>
+<li>llllllddd (39880)</li>
+<li>lllllllllllll (38020)</li>
+<li>llllld (37956)</li>
+<li>llllllllld (31733)</li>
+<li>lllddlll (31313)</li>
+<li>Ulllllld (30514)</li>
+<li>ddddddd (29990)</li>
+<li>lllddd (28945)</li>
+<li>llllllldddd (28025)</li>
+<li>Ulllllldd (27468)</li>
+<li>llllllllldd (27366)</li>
+<li>llldddddd (26340)</li>
+<li>llllllllllllll (23438)</li>
+<li>llllddd (23020)</li>
+<li>lllllllddd (22118)</li>
+<li>ddddddddddddddd (21387)</li>
+<li>Ullllllld (20624)</li>
+<li>Ullllllldd (20347)</li>
+<li>Ullldddd (19995)</li>
+<li>lldddddd (18973)</li>
+<li>lllllllldddd (17737)</li>
+<li>Ulllllll (17442)</li>
+<li>llldllll (17355)</li>
+<li>Ulllldddd (17139)</li>
+<li>lllldlll (16879)</li>
+<li>Ullllldddd (16442)</li>
+<li>lllllllllldd (15200)</li>
+<li>lllllllllld (15112)</li>
+<li>Ullllddd (13455)</li>
+<li>lllddddd (13315)</li>
+<li>llllllllddd (13066)</li>
+<li>Ulllllllld (12944)</li>
+<li>ddddllll (12832)</li>
+<li>lllllllllllllll (12628)</li>
+<li>Ullllll (12399)</li>
+<li>Ulllll (12372)</li>
+<li>dlllllll (12327)</li>
+<li>Ullllllll (12058)</li>
+<li>Ulllldd (11992)</li>
+<li>lllldllll (11988)</li>
+<li>ddddll (10941)</li>
+</ul>
+</div>
+<div class="section" id="mayhem">
+<h1>mayhem</h1>
+<p>76286 entries</p>
+<ul class="simple">
+<li>llllll (2674)</li>
+<li>llllllll (2485)</li>
+<li>lllllll (2004)</li>
+<li>lllll (1529)</li>
+<li>lllllllll (1350)</li>
+<li>llllllllll (910)</li>
+<li>dddddd (693)</li>
+<li>lUlUl (534)</li>
+<li>lUlll (527)</li>
+<li>llllU (525)</li>
+<li>llUll (523)</li>
+<li>lllUl (507)</li>
+<li>Ullll (505)</li>
+<li>dddddddd (496)</li>
+<li>lUUUl (495)</li>
+<li>llUlU (491)</li>
+<li>lUUUU (488)</li>
+<li>UUUUl (487)</li>
+<li>UllUU (485)</li>
+<li>lUllU (478)</li>
+<li>lllllldd (478)</li>
+<li>UlUUl (477)</li>
+<li>UlllU (477)</li>
+<li>llUUl (477)</li>
+<li>UlUll (476)</li>
+<li>UUUll (475)</li>
+<li>UlUlU (475)</li>
+<li>lUUlU (474)</li>
+</ul>
+</div>
+<div class="section" id="misc2013">
+<h1>misc2013</h1>
+<p>1711328 entries</p>
+<ul class="simple">
+<li>dddddddddddddd (59857)</li>
+<li>llllllllll (15597)</li>
+<li>llllllll (14557)</li>
+<li>lllllllllll (13581)</li>
+<li>llllll (12505)</li>
+<li>lllllllll (11878)</li>
+<li>llllllllllll (11821)</li>
+<li>lllllll (10333)</li>
+<li>dddddd (7960)</li>
+<li>lllllllllllll (7412)</li>
+<li>lllllldd (7145)</li>
+<li>lllllllldd (6665)</li>
+<li>llllllllllllll (5617)</li>
+<li>llllllldd (5594)</li>
+<li>lllll (5583)</li>
+<li>llllllllldd (5469)</li>
+<li>lllllllld (5211)</li>
+<li>llllllllld (5168)</li>
+<li>lllllldddd (4708)</li>
+<li>lllllllllld (4331)</li>
+<li>llllllld (4220)</li>
+<li>llll (3934)</li>
+<li>dddddddd (3880)</li>
+<li>lllllllllldd (3870)</li>
+<li>llllllldddd (3839)</li>
+<li>lllllllllllllll (3817)</li>
+<li>lllllllldddd (3565)</li>
+<li>lllllllddd (3457)</li>
+<li>llllldd (3382)</li>
+<li>lllldddd (3272)</li>
+<li>ddddddddddddd (3272)</li>
+<li>llllllllslllllslll (3236)</li>
+<li>lllllddd (3222)</li>
+<li>lllllllslllllslll (3119)</li>
+<li>ddddddd (3058)</li>
+<li>llllllllllllllll (2891)</li>
+<li>llllldddd (2889)</li>
+<li>llllllllddd (2848)</li>
+<li>lllllld (2844)</li>
+<li>llllllddd (2803)</li>
+<li>lllllllllslllllslll (2568)</li>
+<li>dddd (2567)</li>
+<li>llllllllllld (2562)</li>
+<li>lll (2458)</li>
+<li>llllllllldddd (2428)</li>
+<li>llllllllslllllllslll (2237)</li>
+<li>llllllllllldd (2060)</li>
+<li>lllllllllddd (2051)</li>
+<li>lllllllslllllllslll (2045)</li>
+<li>llllllllllslllllslll (2028)</li>
+<li>ddddddddd (2021)</li>
+<li>ddddddddddd (1855)</li>
+<li>lllllllllldddd (1749)</li>
+<li>llllllslllllslll (1695)</li>
+<li>dddddddddd (1631)</li>
+<li>lllllllllllslllllslll (1612)</li>
+<li>llllllddslllllslll (1607)</li>
+<li>lllllllllslllllllslll (1587)</li>
+<li>llldddd (1563)</li>
+<li>llllldddddd (1557)</li>
+<li>lllllldddddd (1515)</li>
+<li>lllllllddslllllslll (1492)</li>
+<li>lllllllllllld (1482)</li>
+<li>llllllllllddd (1457)</li>
+<li>ll (1407)</li>
+<li>llllllllllllslllllslll (1347)</li>
+<li>llllllllllslllllllslll (1315)</li>
+<li>lllllllllllldd (1307)</li>
+<li>lllllllllllllllll (1301)</li>
+<li>lllddd (1272)</li>
+<li>lllllddslllllslll (1248)</li>
+<li>llllddd (1211)</li>
+<li>llllllllddslllllslll (1197)</li>
+<li>UUUUUUUUUU (1173)</li>
+<li>llllllslllllllslll (1169)</li>
+<li>ddllllllll (1158)</li>
+<li>lllldd (1153)</li>
+<li>lllldddddddd (1141)</li>
+<li>llllld (1116)</li>
+<li>Ullll (1115)</li>
+<li>llllUlll (1045)</li>
+<li>UlllUlll (1044)</li>
+<li>llUllllU (1029)</li>
+<li>UllUllll (1027)</li>
+<li>lllllllllllslllllllslll (1026)</li>
+<li>lUlllUll (1025)</li>
+<li>llllllddslllllllslll (1022)</li>
+<li>lllUllll (1011)</li>
+<li>llllllllllldddd (1006)</li>
+<li>lllddlll (1006)</li>
+<li>lllUlllU (995)</li>
+<li>llUlllUl (982)</li>
+<li>llllUUUU (977)</li>
+<li>Ullllllldd (976)</li>
+<li>lllUllUl (976)</li>
+<li>lllllllU (976)</li>
+<li>UllllUll (973)</li>
+<li>lllllUll (973)</li>
+<li>UlllUUll (972)</li>
+<li>UlUlllll (971)</li>
+<li>lUllllUU (971)</li>
+<li>lllllllllllllslllllslll (971)</li>
+<li>UlUlUlUl (968)</li>
+<li>lllllllllllddd (961)</li>
+<li>lUlUllll (958)</li>
+<li>llUlUlll (954)</li>
+<li>lUUlUllU (949)</li>
+<li>llUUUlUl (949)</li>
+<li>UlllllUl (948)</li>
+<li>llUUUlll (948)</li>
+<li>lUlUllUl (945)</li>
+<li>lUllUlll (944)</li>
+<li>lUUllUlU (941)</li>
+<li>lllUlUlU (939)</li>
+<li>lUUlUlll (938)</li>
+<li>lUUlllUl (937)</li>
+<li>UUUlllll (935)</li>
+<li>lUllllUl (934)</li>
+<li>llUlllll (933)</li>
+<li>UlllUlUU (932)</li>
+<li>lUllUlUl (932)</li>
+<li>lUllllll (932)</li>
+<li>ddddllll (932)</li>
+<li>llUUllll (929)</li>
+<li>UUlllllU (928)</li>
+<li>UUUllUll (927)</li>
+<li>UllllllU (926)</li>
+<li>llUllUUl (925)</li>
+<li>lUUUlUll (924)</li>
+<li>UUUUllll (923)</li>
+<li>lUUUllll (923)</li>
+<li>lUlUlllU (923)</li>
+<li>lUllUllU (923)</li>
+<li>UlllUUUU (922)</li>
+<li>llUlUlUl (922)</li>
+<li>llllUlUl (922)</li>
+<li>lUUlllll (921)</li>
+<li>UllUlUll (920)</li>
+<li>lUlUlUlU (920)</li>
+<li>lllllUUU (919)</li>
+<li>lUUllllU (918)</li>
+<li>lUlUlUUl (916)</li>
+<li>lUlUllUU (916)</li>
+<li>llUUlUlU (916)</li>
+<li>llUllUll (914)</li>
+<li>UlUllUlU (913)</li>
+<li>lUlUUlll (913)</li>
+<li>UlllUllU (912)</li>
+<li>lllllUlU (912)</li>
+<li>lllUUUlU (911)</li>
+<li>llllllUU (911)</li>
+<li>UUUlllUU (909)</li>
+<li>UUllUlll (909)</li>
+<li>lUlllUUl (906)</li>
+<li>lllUUlUl (906)</li>
+<li>UUUlUlll (905)</li>
+<li>UUlllUll (905)</li>
+<li>UlllUlUl (904)</li>
+<li>UlUlUlll (903)</li>
+<li>UUllllUl (902)</li>
+<li>lUUllUll (902)</li>
+<li>llUUllUl (902)</li>
+<li>UlUllUUl (900)</li>
+<li>UllUUllU (900)</li>
+<li>llUlUUlU (900)</li>
+<li>UlUlllUU (899)</li>
+<li>UllUlllU (899)</li>
+<li>lllUUlll (899)</li>
+<li>UlUUllll (898)</li>
+<li>UlUllllU (897)</li>
+<li>UllUUlll (895)</li>
+<li>lUUlllUU (894)</li>
+<li>lllllUUl (894)</li>
+<li>UUlUlllU (893)</li>
+<li>lllUlUUl (893)</li>
+<li>llllUlUU (893)</li>
+<li>UUllUUlU (892)</li>
+<li>lUUllUUl (892)</li>
+<li>UUlUlUlU (891)</li>
+<li>llUllUlU (891)</li>
+<li>UlUlUUll (890)</li>
+<li>llUUlUUl (890)</li>
+<li>lllUlUll (890)</li>
+<li>llllUUlU (890)</li>
+<li>UlUUllUU (888)</li>
+<li>UlUlllUl (887)</li>
+<li>llUUUUll (887)</li>
+<li>UlllllUU (886)</li>
+<li>llllUllU (885)</li>
+<li>lUUlUlUl (884)</li>
+<li>lUlllllU (884)</li>
+<li>UUUlUUll (883)</li>
+<li>UlUUUlll (883)</li>
+<li>UllUUUlU (883)</li>
+<li>lUUUlUlU (883)</li>
+<li>llllllUl (883)</li>
+<li>UllUlUUl (882)</li>
+<li>lllUUllU (882)</li>
+<li>UUlUlUll (881)</li>
+<li>UllUllUl (881)</li>
+<li>lUlUUUUl (881)</li>
+<li>UlUUllUl (879)</li>
+<li>UlUllUll (879)</li>
+<li>lUUUUUUU (879)</li>
+<li>lllUUUll (879)</li>
+<li>lllUllUU (879)</li>
+<li>UUUUUlll (877)</li>
+<li>llUUUllU (877)</li>
+<li>UllUUUUl (876)</li>
+<li>llUlUUUl (876)</li>
+<li>lUUUllUl (875)</li>
+<li>UllllUUl (874)</li>
+<li>lUllUUll (874)</li>
+<li>UlUUlUll (873)</li>
+<li>lUlllUlU (873)</li>
+<li>UUUUUlUl (872)</li>
+<li>lUUUUUUl (872)</li>
+<li>llllUUUl (872)</li>
+<li>llUlUllU (871)</li>
+<li>llUlllUU (871)</li>
+<li>UUlUlUUl (870)</li>
+<li>UlUllUUU (870)</li>
+<li>llUUUUUl (870)</li>
+<li>UUUllllU (869)</li>
+<li>lUlUUUll (869)</li>
+<li>UlUlUlUU (868)</li>
+<li>UUlUllUU (867)</li>
+<li>llUUlUll (867)</li>
+<li>UllUllUU (865)</li>
+<li>llllllllllllllllll (865)</li>
+<li>llllddllll (865)</li>
+<li>UllUUlUl (863)</li>
+<li>llldllll (863)</li>
+<li>UUllllUU (862)</li>
+<li>lUlUUlUl (862)</li>
+<li>llUUllUU (862)</li>
+<li>ddlllllllll (862)</li>
+<li>UUUUlllU (861)</li>
+<li>UllllUlU (861)</li>
+<li>lUlUUUlU (861)</li>
+<li>llUllUUU (861)</li>
+<li>UUlUUlUl (860)</li>
+<li>UUllUUUl (860)</li>
+<li>lUllUUlU (860)</li>
+<li>UUlUllll (859)</li>
+<li>lUllUUUl (859)</li>
+<li>UUUlllUl (858)</li>
+<li>UUllUlUl (858)</li>
+<li>lllUUlUU (857)</li>
+<li>UUlUUllU (856)</li>
+<li>UllUUlUU (856)</li>
+<li>lUUlUUll (856)</li>
+<li>llllUUll (856)</li>
+<li>UllUlUlU (855)</li>
+</ul>
+</div>
+<div class="section" id="opisrael">
+<h1>opisrael</h1>
+<p>12871 entries</p>
+<ul class="simple">
+<li>dddddddddddddd (3020)</li>
+<li>dddddd (619)</li>
+<li>dddddddd (352)</li>
+<li>ddddddd (294)</li>
+</ul>
+</div>
+<div class="section" id="opnkorea">
+<h1>opnkorea</h1>
+<p>8980 entries</p>
+<ul class="simple">
+<li>dddddd (1864)</li>
+<li>dddd (1051)</li>
+<li>ddddddd (977)</li>
+<li>dddddddd (668)</li>
+</ul>
+</div>
+<div class="section" id="opsea">
+<h1>opsea</h1>
+<p>4152 entries</p>
+<ul class="simple">
+<li>dddddddddd (434)</li>
+<li>ddddddd (248)</li>
+<li>dddddddd (226)</li>
+<li>ddddddddd (140)</li>
+<li>dddddddddddd (81)</li>
+</ul>
+</div>
+<div class="section" id="rootkit">
+<h1>rootkit</h1>
+<p>70233 entries</p>
+<ul class="simple">
+<li>llllll (8238)</li>
+<li>llllllll (6453)</li>
+<li>lllllll (5513)</li>
+<li>dddddd (4428)</li>
+</ul>
+</div>
+<div class="section" id="stratfor">
+<h1>stratfor</h1>
+<p>809330 entries</p>
+<ul class="simple">
+<li>llllllll (24686)</li>
+<li>llllll (15395)</li>
+<li>lllllll (10179)</li>
+<li>lllllldd (5383)</li>
+<li>lllllllll (4522)</li>
+<li>dddddd (4237)</li>
+<li>UUddddd (4018)</li>
+<li>llllllld (3228)</li>
+<li>lllldddd (3078)</li>
+<li>lllll (3012)</li>
+<li>llllllllll (2792)</li>
+<li>llllld (2710)</li>
+<li>llllldd (2326)</li>
+<li>dddd (2188)</li>
+<li>lllllld (2164)</li>
+<li>lllllddd (1984)</li>
+<li>lllldd (1919)</li>
+<li>dddddddd (1863)</li>
+<li>llllllldd (1820)</li>
+<li>lllllllld (1807)</li>
+<li>llldddd (1778)</li>
+<li>Ulllllll (1532)</li>
+<li>llllldddd (1470)</li>
+<li>lllllllldd (1467)</li>
+<li>lllddd (1323)</li>
+<li>llll (1257)</li>
+<li>lldddd (1247)</li>
+<li>Ullllldd (1246)</li>
+<li>lllllldddd (1238)</li>
+<li>lllllllllll (1212)</li>
+<li>Ulllllld (1027)</li>
+<li>llllllddd (1007)</li>
+<li>ddddddd (954)</li>
+<li>Ulllll (936)</li>
+<li>llllllllslllllllslll (863)</li>
+<li>lUlllUll (840)</li>
+<li>llllllllllll (838)</li>
+<li>lllllUll (834)</li>
+<li>lllllllU (823)</li>
+<li>lllUllll (821)</li>
+<li>UUllllll (815)</li>
+<li>llllddd (809)</li>
+<li>lllllUlU (801)</li>
+<li>UllUllll (799)</li>
+<li>llUllllU (797)</li>
+<li>lUllllUU (785)</li>
+<li>UllllUll (782)</li>
+<li>lllUlllU (782)</li>
+<li>lUUlllll (777)</li>
+<li>llllUlll (775)</li>
+<li>llUlllUl (772)</li>
+<li>UllllllU (771)</li>
+<li>lllUllUl (770)</li>
+<li>UlllUlll (766)</li>
+<li>UlUlllll (764)</li>
+<li>lUllUllU (764)</li>
+<li>llUUUlll (764)</li>
+<li>UlllUUll (763)</li>
+<li>llllllUU (763)</li>
+<li>lUlUlllU (759)</li>
+<li>lUlUllll (756)</li>
+<li>UUUUUUUU (754)</li>
+<li>llUllUll (753)</li>
+<li>llllUlUl (752)</li>
+<li>UlllllUl (750)</li>
+<li>lUllUlll (748)</li>
+<li>UUlllUll (747)</li>
+<li>lUUlUlll (746)</li>
+<li>lUllllUl (746)</li>
+<li>lUllllll (746)</li>
+<li>llUlUlll (744)</li>
+<li>llUUllll (743)</li>
+<li>lllllUUl (741)</li>
+<li>llUlUlUl (740)</li>
+<li>UllUUllU (739)</li>
+<li>lllllUUU (739)</li>
+<li>llUUllUl (737)</li>
+<li>llllUllU (737)</li>
+<li>UUllUlll (736)</li>
+<li>lllUlUll (735)</li>
+<li>lUUlllUl (734)</li>
+<li>lllUUlUl (734)</li>
+<li>UlUUllUl (733)</li>
+<li>lUUllUlU (733)</li>
+<li>llllllUl (733)</li>
+<li>UUUlUlll (732)</li>
+<li>UllUllUl (732)</li>
+<li>UUUUllll (731)</li>
+<li>UUUlllll (731)</li>
+<li>lUUlUllU (730)</li>
+<li>lUUllUll (730)</li>
+<li>llllUUUl (730)</li>
+<li>UlllUlUl (729)</li>
+<li>llUlllll (728)</li>
+<li>lllUUUlU (728)</li>
+<li>UUlUlUlU (727)</li>
+<li>llUUUlUl (727)</li>
+<li>UUlllllU (726)</li>
+<li>lllUUllU (726)</li>
+<li>lUUlllUU (725)</li>
+<li>lUllUlUl (724)</li>
+<li>lllUlUUl (724)</li>
+<li>UlUlUlll (723)</li>
+<li>lUlUllUl (723)</li>
+<li>UlllUlUU (722)</li>
+<li>lUUlUlUl (722)</li>
+<li>lllllllslllllllslll (722)</li>
+<li>lUUUllll (720)</li>
+<li>lUlUlUUl (719)</li>
+<li>lllUlUlU (719)</li>
+<li>UlllllUU (718)</li>
+<li>llUUlUlU (718)</li>
+<li>llUlUllU (716)</li>
+<li>llUllUUl (715)</li>
+<li>UlUlllUU (714)</li>
+<li>UllUlUll (714)</li>
+<li>lUUUlUll (714)</li>
+<li>llUUUUll (714)</li>
+<li>UUlUlUll (713)</li>
+<li>UlUllUUl (713)</li>
+<li>lUlUUlll (713)</li>
+<li>UUlUllll (712)</li>
+<li>lUlllUUl (712)</li>
+<li>UUUllUll (711)</li>
+<li>lUUllllU (711)</li>
+<li>lUlllllU (711)</li>
+<li>llUlUUlU (711)</li>
+<li>llllUUUU (711)</li>
+<li>UllUlllU (710)</li>
+<li>UlllUllU (710)</li>
+<li>lUllUUll (710)</li>
+<li>Ullllll (708)</li>
+<li>lUUlUUll (708)</li>
+<li>UUlUlllU (707)</li>
+<li>UllllUlU (706)</li>
+<li>llllUlUU (706)</li>
+<li>UUlUUlUl (705)</li>
+<li>UUlllUlU (705)</li>
+<li>UlUllUll (705)</li>
+<li>lUlUlUlU (705)</li>
+<li>lllUUUUl (705)</li>
+<li>llUUUllU (704)</li>
+<li>llUllUlU (704)</li>
+<li>lllUllUU (704)</li>
+<li>lUUUlUlU (703)</li>
+<li>UllUUlll (702)</li>
+<li>lUlllUlU (702)</li>
+<li>lllUUlll (702)</li>
+<li>UlUllllU (701)</li>
+<li>UlllUUUU (701)</li>
+<li>UlUlUUll (700)</li>
+<li>UUllllUl (699)</li>
+<li>UlUllUlU (699)</li>
+<li>llUUllUU (699)</li>
+<li>llUUlUll (697)</li>
+<li>lUlUUUUl (696)</li>
+<li>UUUUUlll (694)</li>
+<li>UUllUUlU (694)</li>
+<li>UllllUUl (693)</li>
+<li>UUUllllU (692)</li>
+<li>UUlUllUl (692)</li>
+<li>lUlUllUU (692)</li>
+<li>UUllUlUl (691)</li>
+<li>llllUUlU (691)</li>
+<li>llllUUll (691)</li>
+<li>UUllUUll (690)</li>
+<li>UUllllUU (690)</li>
+<li>UllUUUll (690)</li>
+<li>UllUlUlU (690)</li>
+<li>llUlUUUl (690)</li>
+<li>lllUUUll (690)</li>
+<li>UlUlllUl (687)</li>
+<li>lUllUUUl (687)</li>
+<li>lUllUUlU (687)</li>
+<li>lllUUlUU (687)</li>
+<li>lUlllUUU (686)</li>
+<li>UUlllUUl (685)</li>
+<li>llUlllUU (685)</li>
+<li>UUUUlUll (683)</li>
+<li>lUUUUUUl (683)</li>
+<li>UlUlUlUU (682)</li>
+<li>UllUUlUU (682)</li>
+<li>lUlUUUll (682)</li>
+<li>UlUUllll (681)</li>
+<li>UlUlUllU (681)</li>
+<li>lUlUlUll (681)</li>
+<li>lUllUUUU (681)</li>
+<li>UUUlllUU (680)</li>
+<li>UlUlUlUl (680)</li>
+<li>lUUUUlll (680)</li>
+<li>llUUlUUl (680)</li>
+<li>UUUUlllU (679)</li>
+<li>UUUlllUl (679)</li>
+<li>llUlUUll (678)</li>
+<li>UllUllUU (677)</li>
+<li>lUlUlUUU (677)</li>
+<li>UlUUlUll (676)</li>
+<li>llUUlllU (676)</li>
+<li>UlUUUlll (674)</li>
+<li>UlUllUUU (674)</li>
+<li>lUUUUUll (674)</li>
+<li>lUlUUllU (674)</li>
+<li>llUlUUUU (674)</li>
+<li>llUllUUU (673)</li>
+<li>UUlUllUU (672)</li>
+<li>UllllUUU (672)</li>
+<li>lUUUlllU (672)</li>
+</ul>
+</div>
+<div class="section" id="sunrise">
+<h1>sunrise</h1>
+<p>18203 entries</p>
+<ul class="simple">
+<li>ddddddddddddd (14947)</li>
+<li>lllllll (487)</li>
+<li>llllllll (432)</li>
+<li>lllllllll (194)</li>
+</ul>
+</div>
+<div class="section" id="tomsawyer">
+<h1>tomsawyer</h1>
+<p>10712 entries</p>
+<ul class="simple">
+<li>llllllll (1827)</li>
+<li>lllllllldddd (1392)</li>
+<li>llllll (1046)</li>
+<li>lllllll (761)</li>
+</ul>
+</div>
+<div class="section" id="walla">
+<h1>walla</h1>
+<p>68174 entries</p>
+<ul class="simple">
+<li>dddd (32357)</li>
+<li>dddddd (10971)</li>
+<li>llllll (3242)</li>
+<li>dddddddd (3098)</li>
+</ul>
+</div>
+<div class="section" id="whitefox">
+<h1>whitefox</h1>
+<p>44148 entries</p>
+<ul class="simple">
+<li>llllll (6374)</li>
+<li>lllllll (3611)</li>
+<li>lllll (3291)</li>
+<li>llllllll (2677)</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
